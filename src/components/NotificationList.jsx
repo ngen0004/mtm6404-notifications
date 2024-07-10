@@ -1,7 +1,9 @@
 
+import NotificationWrapper from "./NotificationWrapper";
+
 function NotificationList({ notifications, clearNotification }) {
   return (
-    <div className="notification-list">
+    <NotificationWrapper>
       {notifications.map(notification => (
         <div key={notification.id} className="notification">
           <h2>{notification.name}</h2>
@@ -9,7 +11,7 @@ function NotificationList({ notifications, clearNotification }) {
           <button onClick={() => clearNotification(notification.id)}>Clear</button>
         </div>
       ))}
-    </div>
+    </NotificationWrapper>
   );
 }
 
